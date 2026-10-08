@@ -42,7 +42,7 @@ html[data-age-confirmed="true"] .age-gate { display: none; }
 .site-header { position: relative; z-index: 10; border-bottom: 1px solid rgba(242,239,232,.14); background: var(--ink); color: var(--paper); }
 .site-header__inner { height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .wordmark { display: inline-flex; align-items: center; gap: 15px; }
-.wordmark__monogram { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(242,239,232,.38); font-family: var(--serif); font-size: 12px; letter-spacing: .08em; }
+.wordmark__mark { flex: 0 0 auto; width: 42px; height: 42px; object-fit: contain; }
 .wordmark__name { font-family: var(--serif); font-size: 19px; letter-spacing: -.01em; }
 .wordmark__name i, .footer-mark i { color: var(--bronze-light); font-weight: 400; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(18px, 2.1vw, 34px); }
@@ -308,7 +308,7 @@ html[data-age-confirmed="true"] .age-gate { display: none; }
   .container { width: min(100% - 32px, 1320px); }
   .site-header__inner { height: 72px; }
   .wordmark__name { font-size: 16px; }
-  .wordmark__monogram { width: 36px; height: 36px; }
+  .wordmark__mark { width: 36px; height: 36px; }
   .age-gate { padding: 16px; }
   .age-gate__panel { padding: 35px 22px; }
   .age-gate__actions { flex-direction: column; }

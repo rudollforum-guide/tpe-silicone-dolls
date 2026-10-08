@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { siteConfig } from "@/config/site";
@@ -7,7 +8,7 @@ export function SiteHeader() {
     <header className="site-header">
       <Container className="site-header__inner">
         <Link className="wordmark" href="/" aria-label={`${siteConfig.name} home`}>
-          <span className="wordmark__monogram">T/S</span>
+          <Image className="wordmark__mark" src="/images/branding/site-mark.png" alt="" width={42} height={42} sizes="(max-width: 720px) 36px, 42px" />
           <span className="wordmark__name">TPE <i>&</i> Silicone Dolls</span>
         </Link>
 
