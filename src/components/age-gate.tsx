@@ -68,8 +68,8 @@ export function AgeGate() {
         <h2 id="age-gate-title">Adults Only — 18+</h2>
         <p id="age-gate-description">This website contains information and imagery related to adult TPE and silicone dolls. You must be at least 18 years old to continue.</p>
         <div className="age-gate__actions">
-          <button ref={enterButtonRef} className="button button--primary" type="button" onClick={enterSite}>I am 18 or older — Enter</button>
-          <button className="button button--secondary" type="button" onClick={exitSite}>Exit</button>
+          <button ref={enterButtonRef} className="button button--primary" type="button" onClick={enterSite}>I AM 18 OR OLDER — ENTER</button>
+          <button className="button button--secondary" type="button" onClick={exitSite}>EXIT</button>
         </div>
         <p className="age-gate__privacy">Your confirmation is stored only in this browser.</p>
       </div>

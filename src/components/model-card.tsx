@@ -17,7 +17,7 @@ export function ModelCard({ model }: ModelCardProps) {
       <div className="model-card__meta"><span>{model.brandName}</span><span>{model.category}</span></div>
       <h3><Link href={`/models/${model.slug}`}>{model.displayName}</Link></h3>
       {facts.length ? <p className="model-card__facts">{facts.join(" · ")}</p> : null}
-      <Link className="text-link" href={`/models/${model.slug}`}>View model <span aria-hidden="true">↗</span></Link>
+      <Link className="text-link" href={`/models/${model.slug}`}>View model</Link>
     </article>
   );
 }

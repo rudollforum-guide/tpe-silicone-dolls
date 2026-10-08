@@ -50,7 +50,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
             <p className="model-detail-summary__description">{model.shortDescription}</p>
             <div className="model-detail-actions">
               <ButtonLink href={affiliate.url} external>Check current availability at {affiliate.partner}</ButtonLink>
-              <Link className="button button--secondary" href={`/brands/${model.brandSlug}`}>View {model.brandName}<span aria-hidden="true">→</span></Link>
+              <Link className="button button--secondary" href={`/brands/${model.brandSlug}`}>View {model.brandName}</Link>
             </div>
             <p className="model-detail-offer">Save {affiliate.discountPercent}% with code <strong>{affiliate.discountCode}</strong></p>
           </div>
@@ -67,7 +67,7 @@ export default async function ModelPage({ params }: ModelPageProps) {
       <section className="model-community-section">
         <Container className="model-community-card">
           <div><p className="eyebrow">Separate external community</p><h2>Continue the conversation</h2><p>Discover additional model photos, discussions, and updates in our external 18+ Telegram community.</p></div>
-          <a className="button button--dark" href={community.telegramUrl} target="_blank" rel="noopener noreferrer">Join the 18+ Telegram Community <span aria-hidden="true">↗</span></a>
+          <a className="button button--primary" href={community.telegramUrl} target="_blank" rel="noopener noreferrer">Join the 18+ Telegram Community</a>
         </Container>
       </section>
 

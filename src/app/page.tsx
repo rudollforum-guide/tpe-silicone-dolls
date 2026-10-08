@@ -58,7 +58,7 @@ export default function HomePage() {
         <Container>
           <div className="section-heading">
             <div><p className="eyebrow">Shop by collection</p><h2>Discover your direction</h2></div>
-            <Link className="text-link" href="/categories">View all categories <span aria-hidden="true">↗</span></Link>
+            <Link className="text-link" href="/categories">View all categories</Link>
           </div>
           <div className="collection-grid">
             {collections.map((collection, index) => (
@@ -95,7 +95,7 @@ export default function HomePage() {
                   const precedingBrands = brandGroups.slice(0, groupIndex).reduce((count, item) => count + item.slugs.length, 0);
                   const position = precedingBrands + index + 1;
                   if (!brand) return null;
-                  return <Link href={`/brands/${brand.slug}`} key={brand.slug}><span>{String(position).padStart(2, "0")}</span>{brand.name}<i aria-hidden="true">↗</i></Link>;
+                  return <Link href={`/brands/${brand.slug}`} key={brand.slug}><span>{String(position).padStart(2, "0")}</span><strong>{brand.name}</strong></Link>;
                 })}
               </div>
             </div>
@@ -104,16 +104,19 @@ export default function HomePage() {
       </section>
 
       <section className="offer-section">
-        <Container className="offer-card">
-          <div>
-            <p className="eyebrow">Preferred partner offer</p>
-            <h2>Save {affiliate.discountPercent}% at {affiliate.partner}</h2>
-            <p>Use code <strong>{affiliate.discountCode}</strong> at checkout.</p>
+        <Container className="promo-offer">
+          <div className="promo-offer__intro">
+            <p className="eyebrow">Moon-Doll partner offer</p>
+            <h2><span>{affiliate.discountPercent}%</span> off</h2>
+            <p>Apply the code at checkout on {affiliate.partner}.</p>
           </div>
-          <div className="offer-card__action">
-            <div className="promo-code"><span>Code</span><strong>{affiliate.discountCode}</strong></div>
-            <ButtonLink href={affiliate.url} external>Shop {affiliate.partner}</ButtonLink>
-            <CopyCodeButton code={affiliate.discountCode} />
+          <div className="promo-offer__coupon">
+            <p className="promo-offer__label">Use code</p>
+            <div className="promo-offer__code">{affiliate.discountCode}</div>
+            <div className="promo-offer__actions">
+              <CopyCodeButton code={affiliate.discountCode} />
+              <ButtonLink href={affiliate.url} external>Shop {affiliate.partner}</ButtonLink>
+            </div>
           </div>
         </Container>
       </section>
@@ -126,9 +129,8 @@ export default function HomePage() {
           </div>
           <div>
             <p>Discover additional model photos, community discussions, updates and uncensored materials. Telegram is a separate external 18+ community.</p>
-            <a className="button button--dark" href={community.telegramUrl} target="_blank" rel="noopener noreferrer">
+            <a className="button button--primary" href={community.telegramUrl} target="_blank" rel="noopener noreferrer">
               {community.telegramUrlIsPlaceholder ? "Telegram link coming soon" : "Join the 18+ community"}
-              <span aria-hidden="true">↗</span>
             </a>
           </div>
         </Container>

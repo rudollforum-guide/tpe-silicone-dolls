@@ -24,7 +24,7 @@ export function BrandProfile({ brand }: BrandProfileProps) {
             <p className="brand-profile-hero__lede">{brand.positioning}</p>
             <div className="brand-profile-hero__actions">
               <ButtonLink href={affiliate.url} external>Browse this brand at {affiliate.partner}</ButtonLink>
-              <a className="button button--secondary" href={brand.officialUrl} target="_blank" rel="noopener noreferrer">Official website <span aria-hidden="true">↗</span></a>
+              <a className="button button--secondary" href={brand.officialUrl} target="_blank" rel="noopener noreferrer">Official website</a>
             </div>
           </div>
           <VisualPlaceholder tall label={`${brand.name} brand image placeholder`} />

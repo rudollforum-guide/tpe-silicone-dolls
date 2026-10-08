@@ -16,7 +16,7 @@ export function CollectionCard({ title, index }: CollectionCardProps) {
       <div className="collection-card__body">
         <h3><Link href="/categories">{title}</Link></h3>
         <Link className="collection-card__link" href="/categories">
-          Explore collection <span aria-hidden="true">↗</span>
+          Explore collection
         </Link>
       </div>
     </article>

@@ -22,7 +22,7 @@ export function EditorialCard({ eyebrow, title, description, href, index }: Edit
         </div>
         <h3><Link href={href}>{title}</Link></h3>
         <p>{description}</p>
-        <Link className="text-link" href={href}>Discover <span aria-hidden="true">↗</span></Link>
+        <Link className="text-link" href={href}>Discover</Link>
       </div>
     </article>
   );

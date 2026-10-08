@@ -22,7 +22,6 @@ export function ButtonLink({
     return (
       <a className={classes} href={href} target="_blank" rel="sponsored noopener noreferrer">
         {children}
-        <span aria-hidden="true">↗</span>
       </a>
     );
   }
@@ -30,7 +29,6 @@ export function ButtonLink({
   return (
     <Link className={classes} href={href}>
       {children}
-      <span aria-hidden="true">→</span>
     </Link>
   );
 }
