@@ -1,0 +1,138 @@
+import Link from "next/link";
+import { ButtonLink } from "@/components/button-link";
+import { CollectionCard } from "@/components/collection-card";
+import { Container } from "@/components/container";
+import { CopyCodeButton } from "@/components/copy-code-button";
+import { ModelCard } from "@/components/model-card";
+import { VisualPlaceholder } from "@/components/visual-placeholder";
+import { brandGroups, brands, siteConfig } from "@/config/site";
+import { getFeaturedModels } from "@/data/models";
+
+const collections = [
+  "Premium Silicone",
+  "TPE & S-TPE",
+  "Anime",
+  "Furry & Fantasy",
+  "Gaming & Cosplay",
+  "Lightweight Models",
+] as const;
+
+export default function HomePage() {
+  const { affiliate, community } = siteConfig;
+  const featuredModels = getFeaturedModels();
+
+  return (
+    <main>
+      <section className="hero">
+        <Container className="hero__grid">
+          <div className="hero__copy">
+            <p className="eyebrow"><span>Independent showroom</span> / Curated selection</p>
+            <h1>Curated TPE <em>&</em><br />Silicone Dolls</h1>
+            <p className="hero__lede">Handpicked premium, anime, fantasy and realistic models from leading manufacturers.</p>
+            <div className="hero__offer">
+              <span>Partner offer</span>
+              <strong>Save {affiliate.discountPercent}% at {affiliate.partner} with code {affiliate.discountCode}</strong>
+            </div>
+            <div className="hero__actions">
+              <ButtonLink href="/models">Explore models</ButtonLink>
+              <ButtonLink href={affiliate.url} variant="secondary" external>Shop at {affiliate.partner}</ButtonLink>
+            </div>
+          </div>
+          <div className="hero__visual-wrap">
+            <VisualPlaceholder tall label="Featured model placeholder" />
+            <div className="hero__caption">
+              <span>Featured selection</span>
+              <span>Curated showroom</span>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="trust-strip" aria-label="Why use this showroom">
+        <Container>
+          <p>Independent curated showroom <span>•</span> Selected brands <span>•</span> Buying guides <span>•</span> Affiliate-supported</p>
+        </Container>
+      </section>
+
+      <section className="section collection-section">
+        <Container>
+          <div className="section-heading">
+            <div><p className="eyebrow">Shop by collection</p><h2>Discover your direction</h2></div>
+            <Link className="text-link" href="/categories">View all categories <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="collection-grid">
+            {collections.map((collection, index) => (
+              <CollectionCard key={collection} title={collection} index={String(index + 1).padStart(2, "0")} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="featured-section">
+        <Container>
+          <div className="section-heading">
+            <div><p className="eyebrow">Featured models</p><h2>The showroom edit</h2></div>
+            <ButtonLink href="/models" variant="secondary">Explore all models</ButtonLink>
+          </div>
+          <div className="model-grid">
+            {featuredModels.map((model) => <ModelCard key={`${model.brandSlug}-${model.slug}`} model={model} />)}
+          </div>
+        </Container>
+      </section>
+
+      <section className="brand-section">
+        <Container>
+          <div className="section-heading section-heading--light">
+            <div><p className="eyebrow">Fourteen makers</p><h2>A considered brand index</h2></div>
+            <ButtonLink href="/brands" variant="secondary">Explore all brands</ButtonLink>
+          </div>
+          {brandGroups.map((group, groupIndex) => (
+            <div className="brand-group" key={group.label}>
+              <p className="brand-group__label">{group.label}</p>
+              <div className="brand-list">
+                {group.slugs.map((slug, index) => {
+                  const brand = brands.find((item) => item.slug === slug);
+                  const precedingBrands = brandGroups.slice(0, groupIndex).reduce((count, item) => count + item.slugs.length, 0);
+                  const position = precedingBrands + index + 1;
+                  if (!brand) return null;
+                  return <Link href={`/brands/${brand.slug}`} key={brand.slug}><span>{String(position).padStart(2, "0")}</span>{brand.name}<i aria-hidden="true">↗</i></Link>;
+                })}
+              </div>
+            </div>
+          ))}
+        </Container>
+      </section>
+
+      <section className="offer-section">
+        <Container className="offer-card">
+          <div>
+            <p className="eyebrow">Preferred partner offer</p>
+            <h2>Save {affiliate.discountPercent}% at {affiliate.partner}</h2>
+            <p>Use code <strong>{affiliate.discountCode}</strong> at checkout.</p>
+          </div>
+          <div className="offer-card__action">
+            <div className="promo-code"><span>Code</span><strong>{affiliate.discountCode}</strong></div>
+            <ButtonLink href={affiliate.url} external>Shop {affiliate.partner}</ButtonLink>
+            <CopyCodeButton code={affiliate.discountCode} />
+          </div>
+        </Container>
+      </section>
+
+      <section className="community-section" id="telegram-community">
+        <Container className="community-card">
+          <div>
+            <p className="eyebrow">Separate external community</p>
+            <h2>Join our 18+ Telegram community</h2>
+          </div>
+          <div>
+            <p>Discover additional model photos, community discussions, updates and uncensored materials. Telegram is a separate external 18+ community.</p>
+            <a className="button button--dark" href={community.telegramUrl} target="_blank" rel="noopener noreferrer">
+              {community.telegramUrlIsPlaceholder ? "Telegram link coming soon" : "Join the 18+ community"}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </Container>
+      </section>
+    </main>
+  );
+}
