@@ -1,10 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { CollectionCard } from "@/components/collection-card";
 import { Container } from "@/components/container";
 import { CopyCodeButton } from "@/components/copy-code-button";
 import { ModelCard } from "@/components/model-card";
-import { VisualPlaceholder } from "@/components/visual-placeholder";
 import { brandGroups, brands, siteConfig } from "@/config/site";
 import { getFeaturedModels } from "@/data/models";
 
@@ -39,11 +39,14 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero__visual-wrap">
-            <VisualPlaceholder tall label="Featured model placeholder" />
-            <div className="hero__caption">
-              <span>Featured selection</span>
-              <span>Curated showroom</span>
-            </div>
+            <Image
+              className="hero__image"
+              src="/images/hero/homepage-cover.png"
+              alt="Curated TPE and silicone doll showroom selection"
+              fill
+              preload
+              sizes="(max-width: 720px) calc(100vw - 32px), (max-width: 980px) 42vw, 44vw"
+            />
           </div>
         </Container>
       </section>
