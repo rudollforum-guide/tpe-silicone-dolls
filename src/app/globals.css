@@ -169,7 +169,7 @@ html[data-age-confirmed="true"] .age-gate { display: none; }
 .offer-card__action .button { width: 100%; }
 
 .community-section { padding: 0 0 120px; background: var(--paper-deep); }
-.community-card { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(45px, 8vw, 120px); align-items: end; padding: clamp(42px, 6vw, 78px); border: 1px solid var(--line); background: var(--cream); }
+.community-card { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(45px, 8vw, 120px); align-items: end; padding: clamp(42px, 6vw, 78px); border: 1px solid var(--line); background: linear-gradient(90deg, rgba(249,247,242,.84), rgba(249,247,242,.72) 52%, rgba(249,247,242,.82)), url("/images/community/telegram-bg.png") center / cover no-repeat; }
 .community-card .eyebrow { margin-bottom: 16px; }
 .community-card h2 { margin: 0; font-family: var(--serif); font-size: clamp(48px, 6vw, 82px); font-weight: 400; line-height: .92; letter-spacing: -.045em; }
 .community-card > div:last-child { display: grid; justify-items: start; gap: 28px; }
@@ -343,7 +343,7 @@ html[data-age-confirmed="true"] .age-gate { display: none; }
   .trust-strip p { line-height: 2.2; }
   .trust-strip span { margin: 0 8px; }
   .community-section { padding-bottom: 65px; }
-  .community-card { padding: 38px 25px; }
+  .community-card { padding: 38px 25px; background-position: center, 22% center; }
   .route-hero { padding: 100px 0 74px; }
   .route-hero__lede { margin-top: 32px; }
   .brand-directory { grid-template-columns: 1fr; }
