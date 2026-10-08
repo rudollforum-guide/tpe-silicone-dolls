@@ -30,8 +30,13 @@ export default function HomePage() {
             <h1>Curated TPE <em>&</em><br />Silicone Dolls</h1>
             <p className="hero__lede">Handpicked premium, anime, fantasy and realistic models from leading manufacturers.</p>
             <div className="hero__offer">
-              <span>Partner offer</span>
-              <strong>Save {affiliate.discountPercent}% at {affiliate.partner} with code {affiliate.discountCode}</strong>
+              <span className="hero__offer-label">Moon-Doll partner offer</span>
+              <div className="hero__offer-summary">
+                <strong>{affiliate.discountPercent}% off</strong>
+                <span>at {affiliate.partner}</span>
+                <span className="hero__offer-code-label">Code</span>
+                <code>{affiliate.discountCode}</code>
+              </div>
             </div>
             <div className="hero__actions">
               <ButtonLink href="/models">Explore models</ButtonLink>

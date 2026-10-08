@@ -12,8 +12,10 @@ export function RouteIntro({ eyebrow, title, description, children }: RouteIntro
   return (
     <main>
       <Container className="route-hero">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1>{title}</h1>
+        <div className="route-hero__title">
+          <p className="eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+        </div>
         <p className="route-hero__lede">{description}</p>
       </Container>
       {children ?? (

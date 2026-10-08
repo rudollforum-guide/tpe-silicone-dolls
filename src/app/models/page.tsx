@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Models", description: "Discover a cu
 
 export default function ModelsPage() {
   return (
-    <RouteIntro eyebrow="Curated showroom" title="The model edit." description={`${models.length} prepared models from selected manufacturers, presented with real imagery and only the details available from their catalogue folders.`}>
+    <RouteIntro eyebrow="Model catalogue" title="Explore the collection" description={`${models.length} prepared models from selected manufacturers, presented with real imagery and available catalogue details.`}>
       <Container className="catalogue-section"><ModelCatalogue models={models} /></Container>
     </RouteIntro>
   );
