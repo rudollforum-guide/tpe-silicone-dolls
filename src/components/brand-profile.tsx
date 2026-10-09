@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
-import { VisualPlaceholder } from "@/components/visual-placeholder";
 import { ModelCard } from "@/components/model-card";
 import type { BrandProfile as BrandProfileData } from "@/config/site";
 import { siteConfig } from "@/config/site";
@@ -23,11 +23,20 @@ export function BrandProfile({ brand }: BrandProfileProps) {
             <h1>{brand.name}</h1>
             <p className="brand-profile-hero__lede">{brand.positioning}</p>
             <div className="brand-profile-hero__actions">
-              <ButtonLink href={affiliate.url} external>Browse this brand at {affiliate.partner}</ButtonLink>
-              <a className="button button--secondary" href={brand.officialUrl} target="_blank" rel="noopener noreferrer">Official website</a>
+              <ButtonLink href={brand.moonDollUrl} external>Shop this brand at {affiliate.partner}</ButtonLink>
+              <ButtonLink href="#models" variant="secondary">View selected models</ButtonLink>
             </div>
+            <p className="brand-profile-hero__disclosure">Affiliate link. We may earn a commission from qualifying purchases at no additional cost to you.</p>
           </div>
-          <VisualPlaceholder tall label={`${brand.name} brand image placeholder`} />
+          <div className="brand-profile-hero__media">
+            <Image
+              src={brand.coverImage}
+              alt={`${brand.name} brand cover artwork`}
+              fill
+              preload
+              sizes="(max-width: 720px) calc(100vw - 32px), (max-width: 980px) 40vw, 42vw"
+            />
+          </div>
         </Container>
       </section>
 
@@ -64,7 +73,7 @@ export function BrandProfile({ brand }: BrandProfileProps) {
       <section className="brand-profile-offer">
         <Container className="offer-card">
           <div><p className="eyebrow">Retail partner</p><h2>Explore {brand.name} at {affiliate.partner}</h2><p>Use code <strong>{affiliate.discountCode}</strong> for {affiliate.discountPercent}% off at checkout.</p></div>
-          <div className="offer-card__action"><ButtonLink href={affiliate.url} external>Browse this brand at {affiliate.partner}</ButtonLink></div>
+          <div className="offer-card__action"><ButtonLink href={brand.moonDollUrl} external>Shop this brand at {affiliate.partner}</ButtonLink></div>
         </Container>
       </section>
 

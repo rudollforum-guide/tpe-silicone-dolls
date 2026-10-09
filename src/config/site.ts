@@ -25,7 +25,8 @@ export const siteConfig = {
 export type BrandProfile = {
   slug: string;
   name: string;
-  officialUrl: string;
+  coverImage: string;
+  moonDollUrl: string;
   positioning: string;
   about: string;
   materials: string;
@@ -37,7 +38,8 @@ export const brands = [
   {
     slug: "fanreal",
     name: "Fanreal Doll",
-    officialUrl: "https://fanrealart.com/",
+    coverImage: "/images/brands/fanreal/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/fanreal-collection?aff=40",
     positioning: "A premium realistic brand focused mainly on platinum silicone, expressive finishing, and reduced-weight construction.",
     about: "Fanreal Doll positions its collection around premium realism. The brand highlights detailed presentation and a product direction centered mainly on silicone models.",
     materials: "The manufacturer focuses mainly on platinum silicone and highlights weight-reduction construction within its range.",
@@ -47,7 +49,8 @@ export const brands = [
   {
     slug: "irontech",
     name: "Irontech Doll",
-    officialUrl: "https://www.irontechdoll.com/",
+    coverImage: "/images/brands/irontech/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/irontech-collection?aff=40",
     positioning: "A premium, technology-focused manufacturer known for platinum silicone and advanced skeleton development.",
     about: "Irontech Doll presents itself as a technology-led premium manufacturer, with an emphasis on continuing development across its silicone and skeleton systems.",
     materials: "The manufacturer highlights platinum silicone and advanced internal skeleton systems.",
@@ -57,7 +60,8 @@ export const brands = [
   {
     slug: "mmx",
     name: "MMX Doll",
-    officialUrl: "https://mmxdoll.com/",
+    coverImage: "/images/brands/mmx/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/mmx-collection-pr0t?aff=40",
     positioning: "A premium artistic silicone brand focused on sculpting, facial realism, lighter construction, and character-led recreations.",
     about: "MMX Doll takes an art-led approach to silicone models, with the brand emphasizing sculptural work and expressive face design.",
     materials: "The brand focuses on silicone models and highlights lightweight construction within its product development.",
@@ -67,7 +71,8 @@ export const brands = [
   {
     slug: "gynoid",
     name: "Gynoid",
-    officialUrl: "https://gynoiddolls.com/",
+    coverImage: "/images/brands/gynoid/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/gynoid-collection?aff=40",
     positioning: "A high-end hyper-realistic manufacturer focused on platinum silicone, surface detail, layered painting, and skeletal construction.",
     about: "Gynoid positions its work at the high end of the realistic silicone market, with close attention to visual finishing and construction.",
     materials: "The manufacturer highlights platinum silicone, detailed skin texture, and multilayer painting.",
@@ -77,7 +82,8 @@ export const brands = [
   {
     slug: "real-lady",
     name: "Real Lady",
-    officialUrl: "https://www.real-lady.com/",
+    coverImage: "/images/brands/real-lady/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/real-lady-collection-cwog?aff=40",
     positioning: "A premium realistic silicone brand connected to the Irontech ecosystem, with luxury presentation and ROS MAX positioning.",
     about: "Real Lady is presented within the wider Irontech ecosystem and emphasizes a luxury-oriented approach to realistic models.",
     materials: "The brand focuses on premium realistic silicone construction within its current positioning.",
@@ -87,7 +93,8 @@ export const brands = [
   {
     slug: "starpery",
     name: "Starpery",
-    officialUrl: "https://www.starpery.com/",
+    coverImage: "/images/brands/starpery/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/starpery-collection-oijf?aff=40",
     positioning: "A realistic silicone manufacturer highlighting reduced weight, Real Skin Texture, and evolving skeleton systems.",
     about: "Starpery presents a realism-focused silicone range and continues to emphasize updates to construction and skeletal systems.",
     materials: "The manufacturer offers silicone models and highlights weight-reduction systems as part of its construction approach.",
@@ -97,7 +104,8 @@ export const brands = [
   {
     slug: "top-fire",
     name: "Top Fire",
-    officialUrl: "https://topfiredoll.com/",
+    coverImage: "/images/brands/top-fire/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/top-fire-collection-kcn4?aff=40",
     positioning: "A newer premium silicone manufacturer focused on ROS, full-silicone construction, and customization.",
     about: "Top Fire is a newer name in the premium segment, presenting a silicone-led range with an emphasis on configurable choices.",
     materials: "The manufacturer highlights full-silicone construction within its current range.",
@@ -107,7 +115,8 @@ export const brands = [
   {
     slug: "top-cydoll",
     name: "Top-CYDOLL",
-    officialUrl: "https://www.topcydoll.com/",
+    coverImage: "/images/brands/top-cydoll/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/top-cydoll-collection-pw1s?aff=40",
     positioning: "A versatile manufacturer spanning silicone, TPE/silicone hybrid, and S-TPE products.",
     about: "Top-CYDOLL presents a broad material range and highlights multiple construction and skeleton options across its catalogue.",
     materials: "The manufacturer offers silicone, TPE/silicone hybrid, and S-TPE products, with weight-reduction options highlighted in parts of the range.",
@@ -117,7 +126,8 @@ export const brands = [
   {
     slug: "wm-doll",
     name: "WM Doll",
-    officialUrl: "https://www.wmdolls.com/",
+    coverImage: "/images/brands/wm-doll/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/wmdoll-collection?aff=40",
     positioning: "A large established manufacturer with a wide range of materials, body sizes, and technology options.",
     about: "WM Doll is an established large-scale manufacturer known for the breadth of its catalogue and the number of configurations it presents.",
     materials: "The manufacturer offers TPE, S-TPE, silicone, and hybrid dolls across numerous body sizes.",
@@ -127,7 +137,8 @@ export const brands = [
   {
     slug: "zelex",
     name: "Zelex",
-    officialUrl: "https://www.zelexdoll.com/",
+    coverImage: "/images/brands/zelex/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/zelex-collection-96rs?aff=40",
     positioning: "A technology- and customization-focused manufacturer organized around several distinct product families.",
     about: "Zelex presents its range through named product families and emphasizes technology and customization within its catalogue.",
     materials: "Construction varies across the manufacturer’s product families. Buyers should confirm the current material and construction details for each model directly.",
@@ -137,7 +148,8 @@ export const brands = [
   {
     slug: "game-lady",
     name: "Game Lady",
-    officialUrl: "https://www.gamelady.net/",
+    coverImage: "/images/brands/game-lady/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/game-lady-collection-f6dq?aff=40",
     positioning: "A character-focused silicone brand specializing in gaming, cosplay, and recognizable fictional-style designs.",
     about: "Game Lady focuses on character-led designs, drawing its visual direction from gaming, cosplay, and familiar fictional archetypes.",
     materials: "The brand specializes in silicone models within its character-focused range.",
@@ -147,7 +159,8 @@ export const brands = [
   {
     slug: "moonvale",
     name: "Moonvale / SY Dolls",
-    officialUrl: "https://sydolls.com/collections/moonvale-doll",
+    coverImage: "/images/brands/moonvale/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/moonvale-collection?aff=40",
     positioning: "A fantasy and furry-oriented silicone line centered on anthropomorphic characters and stylized designs.",
     about: "Moonvale is presented by SY Dolls as a character-led line with a strong fantasy and anthropomorphic direction.",
     materials: "The line focuses on silicone models within its stylized fantasy and furry catalogue.",
@@ -157,7 +170,8 @@ export const brands = [
   {
     slug: "irokebijin",
     name: "Irokebijin",
-    officialUrl: "https://www.irokebijinshop.com/",
+    coverImage: "/images/brands/irokebijin/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/irokebijin-collection?aff=40",
     positioning: "An anime-oriented manufacturer offering S-TPE and HSS / hyper-soft silicone product lines.",
     about: "Irokebijin organizes its catalogue around anime-inspired styling and distinct soft-material product lines.",
     materials: "The manufacturer offers S-TPE and HSS / hyper-soft silicone product lines.",
@@ -167,7 +181,8 @@ export const brands = [
   {
     slug: "elsa-babe",
     name: "Elsa Babe",
-    officialUrl: "https://elsababedoll.com/",
+    coverImage: "/images/brands/elsa-babe/brand-cover.png",
+    moonDollUrl: "https://www.moon-doll.com/collections/elsababe-collection?aff=40",
     positioning: "A large anime and furry manufacturer offering both TPE and silicone models across stylized character categories.",
     about: "Elsa Babe presents a large catalogue built around anime, furry, and other stylized character directions.",
     materials: "The manufacturer offers both TPE and silicone dolls across its character-focused categories.",
