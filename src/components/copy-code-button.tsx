@@ -4,9 +4,10 @@ import { useState } from "react";
 
 type CopyCodeButtonProps = {
   code: string;
+  display?: "action" | "code";
 };
 
-export function CopyCodeButton({ code }: CopyCodeButtonProps) {
+export function CopyCodeButton({ code, display = "action" }: CopyCodeButtonProps) {
   const [copied, setCopied] = useState(false);
 
   async function copyCode() {
@@ -31,9 +32,19 @@ export function CopyCodeButton({ code }: CopyCodeButtonProps) {
     if (didCopy) window.setTimeout(() => setCopied(false), 3000);
   }
 
-  return (
-    <button className="button button--secondary promo-copy-button" type="button" onClick={copyCode} aria-live="polite">
-      {copied ? "Copied" : "Copy code"}
-    </button>
-  );
+  if (display === "code") {
+    return (
+      <button
+        className="hero-offer-code-button"
+        type="button"
+        onClick={copyCode}
+        aria-label={`Copy promo code ${code}`}
+        aria-live="polite"
+      >
+        <code>{copied ? "Code copied" : code}</code>
+      </button>
+    );
+  }
+
+  return <button className="button button--secondary promo-copy-button" type="button" onClick={copyCode} aria-live="polite">{copied ? "Copied" : "Copy code"}</button>;
 }

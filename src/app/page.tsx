@@ -5,6 +5,7 @@ import { CollectionCard } from "@/components/collection-card";
 import { Container } from "@/components/container";
 import { CopyCodeButton } from "@/components/copy-code-button";
 import { ModelCard } from "@/components/model-card";
+import { RewardsSection } from "@/components/rewards-section";
 import { brandGroups, brands, siteConfig } from "@/config/site";
 import { getFeaturedModels } from "@/data/models";
 
@@ -35,7 +36,7 @@ export default function HomePage() {
                 <strong>{affiliate.discountPercent}% off</strong>
                 <span>at {affiliate.partner}</span>
                 <span className="hero__offer-code-label">Code</span>
-                <code>{affiliate.discountCode}</code>
+                <CopyCodeButton code={affiliate.discountCode} display="code" />
               </div>
             </div>
             <div className="hero__actions">
@@ -128,6 +129,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <RewardsSection />
 
       <section className="community-section" id="telegram-community">
         <Container className="community-card">
