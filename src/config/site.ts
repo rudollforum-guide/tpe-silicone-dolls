@@ -5,6 +5,7 @@ export const siteConfig = {
   affiliate: {
     partner: "Moon-Doll",
     url: "https://www.moon-doll.com/?aff=40",
+    catalogUrl: "https://www.moon-doll.com/collections/browse-all?aff=40",
     discountCode: "MOONDOLLCORE",
     discountPercent: 5,
   },
@@ -14,13 +15,45 @@ export const siteConfig = {
   },
   navigation: [
     { label: "Brands", href: "/brands" },
-    { label: "Categories", href: "/categories" },
     { label: "Models", href: "/models" },
     { label: "Buying Guide", href: "/buying-guide" },
     { label: "Deals", href: "/deals" },
     { label: "About", href: "/about" },
   ],
 } as const;
+
+export const homepageCollections = [
+  {
+    title: "Premium Silicone",
+    image: "/images/collections/premium-silicone-cover.png",
+    href: "https://www.moon-doll.com/collections/full-silicone-collection?aff=40",
+  },
+  {
+    title: "TPE & S-TPE",
+    image: "/images/collections/tpe-s-tpe-cover.png",
+    href: "https://www.moon-doll.com/collections/all-tpe?aff=40",
+  },
+  {
+    title: "Anime",
+    image: "/images/collections/anime-cover.png",
+    href: "https://www.moon-doll.com/collections/anime-collection?aff=40",
+  },
+  {
+    title: "Furry & Fantasy",
+    image: "/images/collections/furry-fantasy-cover.png",
+    href: "https://www.moon-doll.com/collections/moonvale-collection?aff=40",
+  },
+  {
+    title: "Gaming & Cosplay",
+    image: "/images/collections/gaming-cosplay-cover.png",
+    href: "https://www.moon-doll.com/collections/game-lady-collection-f6dq?aff=40",
+  },
+  {
+    title: "Lightweight Models",
+    image: "/images/collections/lightweight-models-cover.png",
+    href: "https://www.moon-doll.com/collections/ultra-light-collection-qahi?aff=40",
+  },
+] as const;
 
 export type BrandProfile = {
   slug: string;

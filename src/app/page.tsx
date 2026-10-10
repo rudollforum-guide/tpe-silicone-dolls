@@ -6,17 +6,8 @@ import { Container } from "@/components/container";
 import { CopyCodeButton } from "@/components/copy-code-button";
 import { ModelCard } from "@/components/model-card";
 import { RewardsSection } from "@/components/rewards-section";
-import { brandGroups, brands, siteConfig } from "@/config/site";
+import { brandGroups, brands, homepageCollections, siteConfig } from "@/config/site";
 import { getFeaturedModels } from "@/data/models";
-
-const collections = [
-  "Premium Silicone",
-  "TPE & S-TPE",
-  "Anime",
-  "Furry & Fantasy",
-  "Gaming & Cosplay",
-  "Lightweight Models",
-] as const;
 
 export default function HomePage() {
   const { affiliate, community } = siteConfig;
@@ -67,11 +58,18 @@ export default function HomePage() {
         <Container>
           <div className="section-heading">
             <div><p className="eyebrow">Shop by collection</p><h2>Discover your direction</h2></div>
-            <Link className="text-link" href="/categories">View all categories</Link>
+            <a
+              className="text-link"
+              href={affiliate.catalogUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+            >
+              Browse all at Moon-Doll
+            </a>
           </div>
           <div className="collection-grid">
-            {collections.map((collection, index) => (
-              <CollectionCard key={collection} title={collection} index={String(index + 1).padStart(2, "0")} />
+            {homepageCollections.map((collection) => (
+              <CollectionCard key={collection.title} {...collection} />
             ))}
           </div>
         </Container>
